@@ -3,20 +3,21 @@ import random
 
 def main():
 
-    value_n = int(input("Digite o valor de N: "))
+    linhas = 3
+    colunas = 3
 
-    if value_n <= 0:
-        print("N deve ser um inteiro positivo maior que zero.")
-        return
+    M = []
 
-    vetor_a = [random.randint(1, value_n) for _ in range(value_n)]
-    vetor_b = [random.randint(1, value_n) for _ in range(value_n)]
+    letra_atual = ord('A')
+    for i in range(linhas):
+        linha = []
+        for c in range(colunas):
+            linha.append(chr(letra_atual))
+            letra_atual += 1
+        M.append(linha)
 
-    vetor_soma = [vetor_a[i] + vetor_b[i] for i in range(value_n)]
-
-    print(f"A: {vetor_a}")
-    print(f"B: {vetor_b}")
-    print(f"C: {vetor_soma}")
+    for linha in M:
+        print(linha)
 
 if __name__ == "__main__":
     main()
